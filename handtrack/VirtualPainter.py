@@ -104,4 +104,8 @@ while True:
 
     cv2.imshow("Image",img)
     #cv2.imshow("Canvas",imgCanvas)
-    cv2.waitKey(1)
+    if cv2.waitKey(1) & 0xFF == ord('q'):  # Vár a q billentyű lenyomására
+        break  # Kilép a ciklusból, ha lenyomták a q-t
+
+cap.release()
+cv2.destroyAllWindows()

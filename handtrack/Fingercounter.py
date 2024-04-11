@@ -37,6 +37,10 @@ while True:
         
         cv2.rectangle(img,(20,225),(170,425),(0,255,50),cv2.FILLED)
         cv2.putText(img,str(totalFingers),(45,375),cv2.FONT_HERSHEY_PLAIN,10,(255,0,0),20)
-    
     cv2.imshow("Image",img)
-    cv2.waitKey(1)
+    if cv2.waitKey(1) & 0xFF == ord('q'):  
+        break  
+
+cap.release()
+cv2.destroyAllWindows()
+   
